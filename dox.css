@@ -1,0 +1,27 @@
+body  { font-family: Verdana, Geneva, Tahoma, sans-serif;}
+h2    { font-size: 1.2em; margin-top: 2em; }
+p     { text-align: justify;}
+li    { page-break-inside: avoid; margin-bottom: 1em; text-align: justify;}
+ol {
+    counter-reset: item;
+    list-style-type: none;
+}
+
+ol>li {
+    counter-increment: item;
+}
+ol>li:before {
+    content: counters(item,".") ". ";
+    margin-left: -20px;
+}
+.logo { float: right; }
+.indent1  { margin-left: 2em; }
+.indent2  { margin-left: 4em; }
+@page {
+  @bottom-left  {
+    content: "Rev: " var(--docrevision);
+  }
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
