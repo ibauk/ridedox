@@ -14,6 +14,15 @@ ol>li:before {
     content: counters(item,".") ". ";
     margin-left: -20px;
 }
+.formpage p   { font-size: .9em; }
+.formpage  input { border: none; border-bottom: 2px solid black;}
+.formpage table { border-collapse: separate; border-spacing: 5px; }
+.formpage td { vertical-align: text-bottom; }
+.formpage input.line { width: 33em; }
+.formpage .advice { font-style: italic; font-size: .7em; }
+.cols2 {width: 100%; }
+.cols2 td:first-of-type { text-align: right; }
+.cols2>td:last-of-type { background-color: lightblue; border-bottom: 2px solid black;}
 .logo { float: right; }
 .indent1  { margin-left: 2em; }
 .indent2  { margin-left: 4em; }
