@@ -1,37 +1,115 @@
-body  { font-family: Verdana, Geneva, Tahoma, sans-serif;}
-h2    { font-size: 1.2em; margin-top: 2em; }
-p     { text-align: justify;}
-li    { page-break-inside: avoid; margin-bottom: 1em; text-align: justify;}
-ol {
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  h2 {
+    font-size: 1.2em;
+    margin-top: 2em;
+  }
+  p {
+    text-align: justify;
+  }
+  li {
+    page-break-inside: avoid;
+    margin-bottom: 1em;
+    text-align: justify;
+  }
+  ol {
     counter-reset: item;
     list-style-type: none;
-}
+  }
 
-ol>li {
+  ol > li {
     counter-increment: item;
-}
-ol>li:before {
-    content: counters(item,".") ". ";
+  }
+  ol > li:before {
+    content: counters(item, ".") ". ";
     margin-left: -20px;
-}
-.page     { page-break-after: always;}
-.formpage p   { font-size: .9em; }
-.formpage input { border: none; border-bottom: 2px solid black;}
-.formpage table { border-collapse: separate; border-spacing: 5px; }
-.formpage td { vertical-align: text-bottom; }
-.formpage input.line { width: 33em; }
-.formpage .advice { font-style: italic; font-size: .7em; }
-.cols2 {width: 100%; }
-.cols2 td:first-of-type { text-align: right; }
-.cols2>td:last-of-type { background-color: lightblue; border-bottom: 2px solid black;}
-.ridelog { border-collapse: separate; border-spacing: 5px; font-size: .9em; }
-.ridelog td { border: 1px solid lightgray; }
-.ridelog input { border: none; }
-.logo { float: right; }
-.indent1  { margin-left: 2em; }
-.indent2  { margin-left: 4em; }
+  }
+  .page {
+    page-break-after: always;
+  }
+  .notes {
+    width: 100%;
+    height: 35em;
+    border: 2px solid black;
+  }
+  .vspace {
+    margin-top: 10em;
+  }
+  .name {
+    width: 20em;
+  }
+  .formpage p {
+    font-size: 0.9em;
+  }
+  .formpage input {
+    border: none;
+    border-bottom: 2px solid black;
+  }
+  .formpage table {
+    border-collapse: separate;
+    border-spacing: 5px;
+  }
+  .formpage td {
+    vertical-align: text-bottom;
+  }
+  .formpage input.short {
+    width: 12em;
+  }
+  .formpage input.line {
+    width: 33em;
+  }
+  .formpage .advice {
+    font-style: italic;
+    font-size: 0.7em;
+  }
+  .cols2 {
+    width: 100%;
+  }
+  .cols2 td:first-of-type {
+    text-align: right;
+  }
+  .cols2 > td:last-of-type {
+    background-color: lightblue;
+    border-bottom: 2px solid black;
+  }
+  .ridelog {
+    border-collapse: separate;
+    border-spacing: 5px;
+    font-size: 0.9em;
+  }
+  .ridelog td {
+    border: 1px solid lightgray;
+  }
+  .ridelog input {
+    border: none;
+  }
+  .ridelog input.seq {
+    text-align: center;
+    color: darkgray;
+    width: 4em;
+  }
+  .ridelog input.dt {
+    width: 5em;
+  }
+  .ridelog input.locn {
+    width: 18em;
+  }
+  .ridelog input.odo {
+    width: 5em;
+  }
+  .logo {
+    float: right;
+  }
+  .indent1 {
+    margin-left: 2em;
+  }
+  .indent2 {
+    margin-left: 4em;
+  }
+
 @page {
-  @bottom-left  {
+  @bottom-left {
     content: "Rev: " var(--docrevision);
   }
   @bottom-right {
