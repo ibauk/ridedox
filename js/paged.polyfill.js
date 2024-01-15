@@ -33238,6 +33238,7 @@
 
 		if(config.auto !== false) {
 			done = await previewer.preview(config.content, config.stylesheets, config.renderTo);
+			console.log('Paged.')
 		}
 
 

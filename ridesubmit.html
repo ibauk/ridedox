@@ -3,7 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <title>Ride Documentation</title>
-    <script src="paged.polyfill.js"></script>
+    <script src="js/paged.polyfill.js"></script>
+    <script src="js/signature_pad.umd.js"></script>
+    <script src="js/sigboxes.js"></script>
+    <script>
+      var signaturesEnabled = false;
+      function enableSignatures() {
+        if (signaturesEnabled) return
+        signBoxes()
+        signaturesEnabled = true
+      }
+    </script>
     <style>
       :root {
         --docrevision: "Jan24";
@@ -11,7 +21,7 @@
     </style>
     <link rel="stylesheet" href="dox.css" />
   </head>
-  <body>
+  <body onselectstart="return false">
     <h1>Ride Documentation 1a</h1>
     <img class="logo" src="ibauklogo.jpg" alt="" />
 
@@ -419,385 +429,45 @@
       <div class="lastpage">
         <h1></h1>
         <img class="logo" src="ibauklogo.jpg" alt="" />
-        |<p class="vspace"></p>
+        |
+        <p class="vspace"></p>
         <h2 class="vspace">Finally</h2>
         <p>Please confirm the accuracy of your information as follows:-</p>
 
         <p class="vspace">
-            I <span class="advice">(Print name)</span> <input class="name"> certify that
+          I <span class="advice">(Print name)</span>
+          <input class="name" onchange="enableSignatures()"/> certify that
         </p>
         <ol>
-            <li>I have read and understood the rules of this ride and the Rider 
-                Guidance Document.
-                </li>
-            <li>I have submitted all the above information to the best of my knowledge and belief.</li>
+          <li>
+            I have read and understood the rules of this ride and the Rider
+            Guidance Document.
+          </li>
+          <li>
+            I have submitted all the above information to the best of my
+            knowledge and belief.
+          </li>
         </ol>
 
-        <p>Signed Rider <input class="name"> &nbsp;&nbsp; Date <input class="short"</p>
-        <p> &nbsp;&nbsp;&nbsp; Pillion <input class="name"> &nbsp;&nbsp; Date <input class="short"</p>
+        <p>Signed Rider</p>
+        <div class="sigbox">
+          <div>
+            <canvas style="border: 2px solid red" width="364" height="66">
+            </canvas>
+          </div>
+        </div>
 
+        &nbsp;&nbsp; Date <input class="short" />
+        <p>&nbsp;&nbsp;&nbsp; Pillion</p>
+        <div class="sigbox">
+          <div>
+            <canvas style="border: 2px solid black" width="364" height="66">
+            </canvas>
+          </div>
+        </div>
+        &nbsp;&nbsp; Date <input class="short" />
       </div>
-
     </form>
-    <div>
-      <!--
-    Ride Documentation 1b ibauklogo.jpeg 
-    
-    
-    Pillion Information (only to be submitted as appropriate)
-    
-    
-    IBA Number (if relevant)    __________________________________
-    Name    ______________________________________________________________________________ 
-     (Please print, how you would like your name to appear on your certificate)
-    Address ____________________________________________
-    Email    _____________________________________________
-    Telephone/mobile _____________________________________
-    Ride attempted (e.g. SS 1000) ________________________________
-    Start date              ______________________________________
-    Special Event Name (if applicable)____________________________________________________
-    Name of rider accompanied ______________________________
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ________________
-    
-    
-    Ride Documentation 2 ibauklogo.jpeg 
-    Start Receipt Information 
-    Rider’s name              ___________________________
-    Pillion’s name  If present  ___________________________
-    Start Location           ___________________________
-    Odometer Reading     ___________________________
-    
-    
-    
-    
-    
-    
-    
-    
-    Paste image here or attach to email
-    Image MUST show BOTH start receipt AND odometer reading.
-    ________________
-    Ride Documentation 3 ibauklogo.jpeg 
-    Finish Receipt Information 
-    Rider’s name              ___________________________
-    Pillion’s name If present   ___________________________
-    Finish Location          ___________________________
-    Odometer Reading    ___________________________
-    
-    
-    
-    
-    
-    
-    
-    
-    Paste image here or attach to email
-    Image MUST show BOTH finish receipt AND odometer reading.
-    
-    
-    
-    
-    ________________
-    Ride Documentation 4 ibauklogo.jpeg 
-    Ride Log
-    To include fuel & other receipts and rest stops over 30 mins.
-    Rider’s name              ___________________________
-    
-    
-    Receipts
-    Numbered in order
-    1, 2, 3, etc
-        Date
-        Time
-        Location
-        Odo
-    Reading
-        GPS
-    Reading
-    optional
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-    All receipts, not just start and finish, must be photo’d next to live odometer and photos must be attached to this submission.
-    
-    
-    Ride Documentation 5 ibauklogo.jpeg 
-    Accompanying notes
-    Rider’s name              ___________________________
-    Explanations about unexpected problems such as,
-    ”In my 3rd fuel stop in Manchester, the receipt time was incorrect so I wrote the correct time on the receipt by hand and asked the cashier to sign.  She refused.  The phone number of the garage is 01234 56789123.”
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    _______________________________________________________________________
-    Please use a continuation sheet if necessary.
-    ________________
-    Ride Documentation 6 ibauklogo.jpeg 
-    Rider Declaration
-    Rider’s name        ___________________________
-    
-    
-    Checklist
-    
-    
-    Please tick to show you have completed and included the following with this Rider Declaration:
-    ____Rider Information           Ride Documentation 1a
-    ____Start Receipt Form   Ride Documentation 2
-    ____Finish Receipt Form   Ride Documentation 3
-    ____Ride Log
-    ____Accompanying Notes
-    ____Copies (NOT originals) of receipts (fuel, restaurants, tolls etc)
-    ____Map/map copy with route marked and locations circled
-    Also, if applicable:
-    ____Pillion Information      Ride Documentation 1b
-    
-    
-    Fees
-    No payment is due when you submit your documentation.  If your ride is verified you will be informed and asked to forward payment as follows: 
-    Certificate                                £30.00
-    Additional copies of certificate £5.00 
-    ________________
-     ibauklogo.jpeg 
-    
-    Finally
-    
-    
-    Please confirm the accuracy of your information as follows:
-    
-    
-    I (Print name) ________________________________________________  certify that 
-    1. I have read and understood the rules of this ride and the Rider 
-    Guidance Document.
-    
-    
-    2. I have submitted all the above information to the best of my knowledge and belief.
-    
-    
-    Signed Rider  _________________________     Date  _______
-    and, if appropriate,
-                Pillion  _________________________     Date  _______
-    
-    
-    
-    
-    
-    
-    
-    
-    Rev: Dec23                Page  of
-
-        -->
-    </div>
+<!--    <form><input type="button" value="Sign me" onclick="signBoxes();"></form>-->
   </body>
 </html>
