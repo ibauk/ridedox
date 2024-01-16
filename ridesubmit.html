@@ -9,6 +9,7 @@
     <script>
       var signaturesEnabled = false;
       function enableSignatures() {
+        console.log('enablingSignatures')
         if (signaturesEnabled) return
         signBoxes()
         signaturesEnabled = true
@@ -436,7 +437,7 @@
 
         <p class="vspace">
           I <span class="advice">(Print name)</span>
-          <input class="name" onchange="enableSignatures()"/> certify that
+          <input class="name" oninput="enableSignatures()"/> certify that
         </p>
         <ol>
           <li>
@@ -468,6 +469,5 @@
         &nbsp;&nbsp; Date <input class="short" />
       </div>
     </form>
-<!--    <form><input type="button" value="Sign me" onclick="signBoxes();"></form>-->
   </body>
 </html>
