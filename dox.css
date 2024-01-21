@@ -101,6 +101,13 @@
   .logo {
     float: right;
   }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flex article {
+    padding: 1em;
+  }
   .indent1 {
     margin-left: 2em;
   }
