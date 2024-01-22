@@ -9,15 +9,21 @@
     <script>
       var signaturesEnabled = false;
       function enableSignatures() {
-        console.log('enablingSignatures')
-        if (signaturesEnabled) return
-        signBoxes()
-        signaturesEnabled = true
+        console.log("enablingSignatures");
+        if (signaturesEnabled) return;
+        signBoxes();
+        signaturesEnabled = true;
+      }
+      function copyName(name) {
+        let root = document.documentElement;
+        root.style.setProperty('--ridername',`"${name}"`);
+
       }
     </script>
     <style>
       :root {
         --docrevision: "Jan24";
+        --ridername: "";
       }
     </style>
     <link rel="stylesheet" href="dox.css" />
@@ -38,7 +44,7 @@
           <tr>
             <td>Name</td>
             <td>
-              <input class="line" /><br /><span class="advice"
+              <input class="line" onchange="copyName(this.value)"/><br /><span class="advice"
                 >(Please print how you would like your name to appear on your
                 certificate)</span
               >
@@ -370,6 +376,10 @@
           >"
         </p>
         <textarea class="notes"></textarea>
+        <p>
+          Spotwalla link <span class="advice">(if avail)</span>
+          <input type="url" />
+        </p>
       </div>
 
       <div class="page">
@@ -437,7 +447,7 @@
 
         <p class="vspace">
           I <span class="advice">(Print name)</span>
-          <input class="name" oninput="enableSignatures()"/> certify that
+          <input class="name" oninput="enableSignatures()" /> certify that
         </p>
         <ol>
           <li>
@@ -453,7 +463,7 @@
         <p>Signed Rider</p>
         <div class="sigbox">
           <div>
-            <canvas style="border: 2px solid red" width="364" height="66">
+            <canvas style="border: 2px solid black" width="364" height="66">
             </canvas>
           </div>
         </div>
