@@ -118,7 +118,14 @@ input[type="url"] {
 .indent2 {
   margin-left: 4em;
 }
-
+.coords {
+  font-family: "Courier New", Courier, monospace;
+  font-size: small;
+  text-align: center;
+}
+.footnotes {
+  font-size: smaller;
+}
 @page {
   @bottom-left {
     content: "Rev: " var(--docrevision);

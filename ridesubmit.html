@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Ride Documentation</title>
+    <style>
+      :root {
+        --docrevision: "Jan24";
+      }
+    </style>
     <script src="js/paged.polyfill.js"></script>
     <script src="js/signature_pad.umd.js"></script>
     <script src="js/sigboxes.js"></script>
@@ -16,16 +21,14 @@
       }
       function copyName(name) {
         let root = document.documentElement;
-        root.style.setProperty('--ridername',`"${name}"`);
-
+        root.style.setProperty("--ridername", `"${name}"`);
+        let flds = document.querySelectorAll("input.name");
+        for (let i = 0; i < flds.length; i++) {
+          flds[i].value = name;
+          enableSignatures();
+        }
       }
     </script>
-    <style>
-      :root {
-        --docrevision: "Jan24";
-        --ridername: "";
-      }
-    </style>
     <link rel="stylesheet" href="dox.css" />
   </head>
   <body onselectstart="return false">
@@ -44,7 +47,8 @@
           <tr>
             <td>Name</td>
             <td>
-              <input class="line" onchange="copyName(this.value)"/><br /><span class="advice"
+              <input class="line" onchange="copyName(this.value)" /><br /><span
+                class="advice"
                 >(Please print how you would like your name to appear on your
                 certificate)</span
               >
@@ -346,6 +350,22 @@
             </tr>
             <tr>
               <td><input class="seq" value="15" /></td>
+              <td><input class="dt" /></td>
+              <td><input class="dt" /></td>
+              <td><input class="locn" /></td>
+              <td><input class="odo" /></td>
+              <td><input class="odo" /></td>
+            </tr>
+            <tr>
+              <td><input class="seq" value="16" /></td>
+              <td><input class="dt" /></td>
+              <td><input class="dt" /></td>
+              <td><input class="locn" /></td>
+              <td><input class="odo" /></td>
+              <td><input class="odo" /></td>
+            </tr>
+            <tr>
+              <td><input class="seq" value="17" /></td>
               <td><input class="dt" /></td>
               <td><input class="dt" /></td>
               <td><input class="locn" /></td>

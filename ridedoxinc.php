@@ -6,7 +6,7 @@ $rides =    [
   'fullmonty.html'    => 'The Full Monty',
   'lighthouses.html'  => 'NEWS Lighthouses',
   'euroend2end.html'  => 'European End to End rides',
-  'vulcans.html'      => 'Vulcans rides',
+  'vulcans.html'      => 'Vulcan rides',
 ];
 ?>
 <style>
