@@ -126,6 +126,11 @@ input[type="url"] {
 .footnotes {
   font-size: smaller;
 }
+.citation {
+  font-size: small;
+  border-top: solid;
+  page-break-before: avoid;
+}
 @page {
   @bottom-left {
     content: "Rev: " var(--docrevision);
